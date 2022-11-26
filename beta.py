@@ -14,7 +14,7 @@ chats = defaultdict(list)
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/",methods=['GET','POST'])
 def hello():
     return "Hello World!"
 
