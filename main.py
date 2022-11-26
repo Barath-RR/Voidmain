@@ -8,7 +8,7 @@ from twilio import twiml
 from collections import defaultdict
 from googleplaces import GooglePlaces, types, lang
 from geopy.geocoders import Nominatim
-
+import os
 chats = defaultdict(list)
 
 app = Flask(__name__)
@@ -351,5 +351,5 @@ def bot():
     return str(resp)
 
 
-# if __name__ == "__main__":
-#     app.run(port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
